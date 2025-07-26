@@ -1,5 +1,7 @@
 # Excel KPI Dashboard App
 
+👉 [Live App on Streamlit](https://excel-kpi-dashboard-gxa8bwbbqgff7egwxc6eqf.streamlit.app/)
+
 This Streamlit app lets users upload an Excel file and view a dynamic KPI dashboard with revenue, expenses, and profit over time and by category.
 
 ## Features
