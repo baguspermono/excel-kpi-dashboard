@@ -6,7 +6,7 @@ import seaborn as sns
 st.set_page_config(page_title="KPI Dashboard", layout="wide")
 
 # Title
-st.title("📊 Excel KPI Dashboard App")
+st.title("Excel KPI Dashboard App")
 st.markdown("Upload your Excel file to view a summary dashboard.")
 
 # Upload section
@@ -29,7 +29,7 @@ if uploaded_file:
     col3.metric("Total Profit", f"${total_profit:,.0f}")
 
     # Time series chart
-    st.subheader("📈 Revenue and Profit Over Time")
+    st.subheader("Revenue and Profit Over Time")
     fig, ax = plt.subplots(figsize=(10, 4))
     df_sorted = df.sort_values("Date")
     ax.plot(df_sorted['Date'], df_sorted['Revenue'], marker='o', label='Revenue')
@@ -41,7 +41,7 @@ if uploaded_file:
     st.pyplot(fig)
 
     # Category breakdown
-    st.subheader("📊 Revenue by Category")
+    st.subheader("Revenue by Category")
     fig2, ax2 = plt.subplots()
     sns.barplot(data=df, x='Category', y='Revenue', ax=ax2)
     ax2.set_title("Revenue by Category")
@@ -49,10 +49,10 @@ if uploaded_file:
 
     # Option to download filtered data
     st.download_button(
-        label="📥 Download Processed Data",
+        label="Download Processed Data",
         data=df.to_csv(index=False).encode('utf-8'),
         file_name='cleaned_kpi_data.csv',
         mime='text/csv'
     )
 else:
-    st.info("👈 Upload an Excel file to get started.")
+    st.info("Upload an Excel file to get started.")
